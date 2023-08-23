@@ -1,0 +1,18 @@
+import { ProjectCard } from "./ProjectCard"
+
+const projects = [
+  {projectName:'The Mode Collection', projectLink:'https://the-mode-collection.up.railway.app/', githubLink:'https://github.com/FEC-Incredibles/The-Mode-Collection-Client', thumbnailImg:'../public/assets/TheModeCollection.png', imgAltTxt:'the mode collection store',  bodyTxt:'At The Mode Collection Client, I undertook a modern redesign of Project Atelier, a popular clothing website. My design and implementation of unique UI components, distinct from conventional libraries, resulted in a 30% jump in user engagement and a 50% surge in monthly users. In addition, I improved the test coverage rate from 42% to 86% using Jest and Cypress for end-to-end testing.', iconPack1:'front end', iconPack2:'back end'}, 
+  {projectName:'Spy Another Day', projectLink:'', githubLink:'https://github.com/Spy-Another-Day/Elder-Wand', thumbnailImg:'../public/assets/SpyAnotherDayLeaderboard.png', imgAltTxt:'spy another day leaderboard', bodyTxt:'Spy Another Day is a real-time, multi-room game inspired by "Codenames," complete with a leaderboard and game history. I built a dynamic game board interface using socket.io, allowing real-time multiplayer interactions. The backend used Redis for caching and MongoDB for persistent storage, effectively managing CRUD operations. I also engineered data structures to handle over 1000 concurrent game rooms, even during 300% traffic spikes..', iconPack1:'front end', iconPack2:'back end'}, 
+  {projectName:'The Round Table', projectLink:'', githubLink:'https://github.com/IamMrUnicorn/TheRoundTable', thumbnailImg:'../public/assets/TheRoundTableGamePage.png', imgAltTxt:'the round table game page', bodyTxt:'At The Round Table, I developed an all-in-one hub for Dungeons and Dragons enthusiasts. The flexible layout I conceived, built with daisyUI, allowed users to customize themes, resulting in a 25% increase in user satisfaction. Additionally, I optimized a PostgreSQL database architecture to manage character data, improving system performance and reducing query times by 40%. The integration of Supabase streamlined backend operations, reducing processing times by up to 70%.', iconPack1:'front end', iconPack2:'back end'}, 
+  {projectName:'Raspberry pi BMO', projectLink:'', githubLink:'https://github.com/IamMrUnicorn/BMO-raspberry-pi', thumbnailImg:'../public/assets/BMO.jpg', imgAltTxt:'3d printed BMO case', bodyTxt:"I recreated BMO, the iconic Adventure Time character, as a voice-activated personal assistant. Using 3D printing, I brought BMO to life, complete with faceplates and buttons. I gained experience in hardware interfacing by wiring these buttons to Raspberry Pi's GPIO pins. The system runs on a Python script for voice command detection, matched to an intelligent phrase system. I integrated Eleven Labs' text-to-speech AI and trained a BMO-specific voice model for enhanced user immersion. Future plans include internet search capabilities and game emulation features.", iconPack1:'AI', iconPack2:'raspberry pi'}
+]
+export const Projects = () => {
+
+  return (
+    <div className="flex flex-col lg:flex-row justify-center gap-5">
+      {projects.map((project, index) => {
+        return (<ProjectCard key={index} projectName={project.projectName} projectLink={project.projectLink} githubLink={project.githubLink} thumbnailImg={project.thumbnailImg} imgAltTxt={project.imgAltTxt} bodyTxt={project.bodyTxt} iconPack1={project.iconPack1} iconPack2={project.iconPack2}/>)
+      })}
+    </div>
+  )
+}
