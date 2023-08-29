@@ -13,6 +13,12 @@ html {
   scroll-behavior: smooth;
 }
 
+.projectGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}
+
 /* main background gradient */
 .wavebg {
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;

@@ -1,33 +1,49 @@
+import { useState } from "react"
+
 interface ProjectCardInterface {
   projectName: string,
   projectLink: string,
   githubLink: string,
   imgAltTxt:string,
   thumbnailImg: string,
-  bodyTxt: string,
+  description: string,
+  task: string,
+  accomplishment: string,
+  difficulty: string,
   iconPack1: string,
   iconPack2: string
 }
 
-export const ProjectCard = ({projectName, projectLink, githubLink, thumbnailImg, imgAltTxt, bodyTxt, iconPack1, iconPack2}:ProjectCardInterface) => {
-  
+export const ProjectCard = ({projectName, projectLink, githubLink, thumbnailImg, imgAltTxt, description, task, accomplishment, difficulty, iconPack1, iconPack2}:ProjectCardInterface) => {
+  const [icon, toggleIcon] = useState(false)
 
   return (
-    <div className="flex flex-col bg-black bg-opacity-30 rounded-3xl h-[800px] w-[600px]">
+    <div className="flex flex-col bg-black bg-opacity-30 rounded-3xl h-[800px] hover:group" onMouseEnter={() => toggleIcon(true)} onMouseLeave={()=> toggleIcon(false)}>
       <div className="flex flex-col rounded-3xl">
-        <p className="absolute text-3xl z-10 ">{iconPack1 === 'front end' ? <i className="fa-solid fa-palatte" /> : iconPack1 === 'AI' ? <i className="fa-solid fa-wifi" /> : null}</p>
-        <p className="absolute text-3xl z-10 ">{iconPack1 === 'front end' ? <i className="fa-solid fa-laptop-code" /> : iconPack1 === 'AI' ? <i className="fa-solid fa-robot" />: null}</p>
-        <img className="h-[400px] object-contain" src={thumbnailImg} alt={imgAltTxt}/>
-        <div className="justify-between p-2 flex flex-row bg-blue-300">
+        
+        <div className="absolute flex flex-row justify-between p-3">
+          {icon ? <p className="relative  w-min text-3xl z-10 ">{iconPack1 === 'front end' ? <i className="fa-solid fa-palette" /> : iconPack1 === 'AI' ? <i className="fa-solid fa-wifi" /> : null}</p>: null}
+          {icon ? <p className="relative left-64 w-min text-3xl z-10 ">{iconPack1 === 'front end' ? <i className="fa-solid fa-laptop-code" /> : iconPack1 === 'AI' ? <i className="fa-solid fa-robot" />: null}</p>: null}
+        </div> 
+
+        <img className="rounded-t-3xl h-[300px]  object-cover" src={thumbnailImg} alt={imgAltTxt}/>
+
+        <div className="absolute flex flex-row justify-between p-3">
+          {icon ? <p className="relative top-60  w-min text-3xl z-10 ">{iconPack2 === 'back end' ? <i className="fa-solid fa-server" /> : iconPack2 === 'raspberry pi' ? <i className="fa-brands fa-raspberry-pi" /> : null}</p>: null}
+          {icon ? <p className="relative top-60 left-64 w-min text-3xl z-10 ">{iconPack2 === 'back end' ? <i className="fa-solid fa-terminal" /> : iconPack2 === 'raspberry pi' ? <i className="fa-brands fa-python" /> : null}</p>: null}
+        </div>
+
+        <div className="justify-between p-3 flex flex-row ">
           {projectLink !== '' ? <a className="text-4xl" target="_blank" href={projectLink}>{projectName}</a> : <p className="text-4xl">{projectName}</p>}
           <a href={githubLink}> <i className="fa-brands fa-github text-4xl" /> </a>
         </div>
       </div>
 
-      <div className="flex flex-col overflow-y-scroll bg-purple-400">
-        <p className="absolute text-3xl z-10 ">{iconPack2 === 'back end' ? <i className="fa-solid fa-server" /> : iconPack2 === 'raspberry pi' ? <i className="fa-brands fa-raspberry-pi" /> : null}</p>
-        <p className="absolute text-3xl z-10 ">{iconPack2 === 'back end' ? <i className="fa-solid fa-terminal" /> : iconPack2 === 'raspberry pi' ? <i className="fa-brands fa-python" /> : null}</p>
-        <p className="p-5 text-2xl">{bodyTxt}</p>
+      <div className="flex flex-col rounded-b-3xl ">
+        <p className="p-2">description: {description}</p>
+        <p className="p-2">my job: {task}</p>
+        <p className="p-2">main challenge: {difficulty}</p>
+        <p className="p-2">main goal: {accomplishment}</p>
       </div>
     </div>
   )
