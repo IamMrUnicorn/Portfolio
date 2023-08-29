@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --text-color: #F4ACB7;
+  --text-color: #4d0af5;
 }
 
 
@@ -21,6 +21,9 @@ html {
 }
 .fontC {
   font-family: 'Shrikhand', cursive;
+}
+.fontD {
+  font-family: 'Aladin', cursive;
 }
 
 .projectGrid {
@@ -47,14 +50,12 @@ html {
 
 /* typing and deleting text */
 .typewriter {
-  color: #fff;
   font-weight: bold;
   margin: 0;
   top: 50%;
 }
 
 .typewriter span {
-  color: var(--text-color);
   text-transform: capitalize;
   padding: 10px;
   border-right: solid var(--text-color) 10px; 
@@ -65,12 +66,6 @@ html {
   from { border-color: var(--text-color); }
   to { border-color: transparent; }
 }
-
-
-
-
-
-
 
 
 
