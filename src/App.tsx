@@ -6,6 +6,72 @@ import { Projects } from './Projects'
 import { About } from './About'
 import { Contact } from './Contact'
 
+
+const events = [
+  {
+    month:'june', 
+    year:'2020', 
+    title:'gradudated highscool', 
+    bgColor:'red', 
+    description:'closed this chapter of my life'
+  },
+  {
+    month:'june', 
+    year:'2020', 
+    title:'gradudated highscool', 
+    bgColor:'red', 
+    description:'closed this chapter of my life'
+  },
+  {
+    month:'june', 
+    year:'2020', 
+    title:'gradudated highscool', 
+    bgColor:'red', 
+    description:'closed this chapter of my life'
+  },
+  {
+    month:'', 
+    year:'', 
+    title:'', 
+    bgColor:'', 
+    description:''
+  },
+  {
+    month:'', 
+    year:'', 
+    title:'', 
+    bgColor:'', 
+    description:''
+  },
+  {
+    month:'', 
+    year:'', 
+    title:'', 
+    bgColor:'', 
+    description:''
+  },
+  {
+    month:'', 
+    year:'', 
+    title:'', 
+    bgColor:'', 
+    description:''
+  },
+  {
+    month:'', 
+    year:'', 
+    title:'', 
+    bgColor:'', 
+    description:''
+  },
+  {
+    month:'', 
+    year:'', 
+    title:'', 
+    bgColor:'', 
+    description:''
+  },
+]
 const App:FC = () => {
   
   const [lightSwitch, toggleLightSwitch] = useState(false)
@@ -52,7 +118,7 @@ const App:FC = () => {
     <div data-theme={lightSwitch ? 'light' : 'dark'} className='bg-base-100'>
       <Navbar lightState={lightSwitch} lightSwitch={changeTheme} />
       <LandingPage/>
-      <About/>
+      <About events={events}/>
       <Projects/>
       <Contact/>
     </div>
