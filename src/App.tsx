@@ -7,73 +7,8 @@ import { About } from './About'
 import { Contact } from './Contact'
 
 
-const events = [
-  {
-    month:'june', 
-    year:'2020', 
-    title:'gradudated highscool', 
-    bgColor:'red', 
-    description:'closed this chapter of my life'
-  },
-  {
-    month:'june', 
-    year:'2020', 
-    title:'gradudated highscool', 
-    bgColor:'red', 
-    description:'closed this chapter of my life'
-  },
-  {
-    month:'june', 
-    year:'2020', 
-    title:'gradudated highscool', 
-    bgColor:'red', 
-    description:'closed this chapter of my life'
-  },
-  {
-    month:'', 
-    year:'', 
-    title:'', 
-    bgColor:'', 
-    description:''
-  },
-  {
-    month:'', 
-    year:'', 
-    title:'', 
-    bgColor:'', 
-    description:''
-  },
-  {
-    month:'', 
-    year:'', 
-    title:'', 
-    bgColor:'', 
-    description:''
-  },
-  {
-    month:'', 
-    year:'', 
-    title:'', 
-    bgColor:'', 
-    description:''
-  },
-  {
-    month:'', 
-    year:'', 
-    title:'', 
-    bgColor:'', 
-    description:''
-  },
-  {
-    month:'', 
-    year:'', 
-    title:'', 
-    bgColor:'', 
-    description:''
-  },
-]
-const App:FC = () => {
-  
+const App: FC = () => {
+
   const [lightSwitch, toggleLightSwitch] = useState(false)
 
   useEffect(() => {
@@ -107,7 +42,7 @@ const App:FC = () => {
 
   const changeTheme = () => {
     toggleLightSwitch(!lightSwitch);
-    
+
 
     // Dispatch theme change event
     const event = new Event('theme-change');
@@ -115,12 +50,12 @@ const App:FC = () => {
   }
 
   return (
-    <div data-theme={lightSwitch ? 'light' : 'dark'} className='bg-base-100'>
+    <div id="home" data-theme={lightSwitch ? 'light' : 'dark'} className='bg-base-100'>
       <Navbar lightState={lightSwitch} lightSwitch={changeTheme} />
-      <LandingPage/>
-      <About events={events}/>
-      <Projects/>
-      <Contact/>
+      <LandingPage />
+      <About />
+      <Projects />
+      <Contact />
     </div>
   )
 }

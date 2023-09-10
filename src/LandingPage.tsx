@@ -36,12 +36,15 @@ const LandingPage: FC = () => {
 
 
   return (
-    <div  className="flex flex-col text-center relative top-28 fontC h-screen items-center">
-
-      <h1 className="py-8 text-6xl "> Hello <span className="text-">World</span> </h1>
-      <h1 className="py-8 text-6xl">meet <span className="text-primary">Jason</span></h1>
-      <h2 className="py-8 typewriter text-5xl">I am a <span className="text-accent">{typingText}</span></h2>
-
+    <div className="flex flex-col text-center relative top-28 pl-10 fontC h-screen items-center">
+      <div className="flex flex-row px-4 ">
+        <div className="flex flex-col">
+          <h1 className="py-8 text-6xl "> Hello <span className="">World</span> </h1>
+          <h1 className="py-8 text-6xl">meet <span className="text-primary">Jason</span></h1>
+        </div>
+        <img className='mx-10 h-80 object-cover rounded-full' src="/assets/JasonQuintana.jpg" />
+      </div>
+      <h2 className="py-8 pr-16 typewriter text-5xl">I am a <span className="text-accent">{typingText}</span></h2>
     </div>
   )
 }

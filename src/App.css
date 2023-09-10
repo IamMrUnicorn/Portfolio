@@ -6,24 +6,25 @@
   --text-color: #4d0af5;
 }
 
-
-
-
 html {
   scroll-behavior: smooth;
 }
 
 .fontA {
-  font-family: 'Berkshire Swash', cursive;
+  font-family: "Berkshire Swash", cursive;
 }
 .fontB {
-  font-family: 'DM Serif Display', serif;
+  font-family: "DM Serif Display", serif;
 }
 .fontC {
-  font-family: 'Shrikhand', cursive;
+  font-family: "Shrikhand", cursive;
 }
 .fontD {
-  font-family: 'Aladin', cursive;
+  font-family: "Aladin", cursive;
+}
+
+.dent {
+  text-indent: 15px;
 }
 
 .projectGrid {
@@ -35,18 +36,29 @@ html {
 /* main background gradient */
 .wavebg {
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  background: linear-gradient(315deg, #FFE5D9 3%,  #9AFCBB 38%, #1E3B27 68%, #D8E2DC 98%);
+  background: linear-gradient(
+    315deg,
+    #ffe5d9 3%,
+    #9afcbb 38%,
+    #1e3b27 68%,
+    #d8e2dc 98%
+  );
   animation: gradient 15s ease infinite;
   background-size: 400% 400%;
   background-attachment: fixed;
 }
 
 @keyframes gradient {
-  0% { background-position: 0% 0%; }
-  50% { background-position: 100% 100%; }
-  100% { background-position: 0% 0%; }
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
 }
-
 
 /* typing and deleting text */
 .typewriter {
@@ -58,30 +70,48 @@ html {
 .typewriter span {
   text-transform: capitalize;
   padding: 10px;
-  border-right: solid var(--text-color) 10px; 
+  border-right: solid var(--text-color) 10px;
   animation: cursor 1s ease-in-out infinite;
 }
 
 @keyframes cursor {
-  from { border-color: var(--text-color); }
-  to { border-color: transparent; }
+  from {
+    border-color: var(--text-color);
+  }
+  to {
+    border-color: transparent;
+  }
 }
-
-
-
-
 
 @keyframes background-pan {
   from {
     background-position: 0% center;
   }
-  
+
   to {
     background-position: -200% center;
   }
 }
 
-h1 > .magic > .magic-text {
+.magic-text {
+  animation: background-pan 3s linear infinite;
+  background: linear-gradient(
+    to left,
+    #f54242,
+    #f57e42,
+    #f5d742,
+    #57f542,
+    #42cbf5,
+    #424bf5,
+    #c242f5,
+    #f542a7
+  );
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  white-space: nowrap;
+}
+.magic-text-reversed {
   animation: background-pan 3s linear infinite;
   background: linear-gradient(
     to right,
@@ -99,133 +129,3 @@ h1 > .magic > .magic-text {
   -webkit-text-fill-color: transparent;
   white-space: nowrap;
 }
-
-
-
-/* 
-section#timeline {
-  width: 80%;
-  margin: 20px auto;
-  position: relative;
-}
-section#timeline:before {
-  content: '';
-  display: block;
-  position: absolute;
-  left: 50%;
-  top: 0;
-  margin: 0 0 0 -1px;
-  width: 2px;
-  height: 100%;
-  background: rgba(255,255,255,0.2);
-}
-section#timeline article {
-  width: 100%;
-  margin: 0 0 20px 0;
-  position: relative;
-}
-section#timeline article:after {
-  content: '';
-  display: block;
-  clear: both;
-}
-section#timeline article div.inner {
-  width: 40%;
-  float: left;
-  margin: 5px 0 0 0;
-  border-radius: 6px;
-}
-section#timeline article div.inner span.date {
-  display: block;
-  width: 60px;
-  height: 50px;
-  padding: 5px 0;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  margin: 0 0 0 -32px;
-  border-radius: 100%;
-  font-size: 12px;
-  font-weight: 900;
-  text-transform: uppercase;
-  background: #25303B;
-  color: rgba(255,255,255,0.5);
-  border: 2px solid rgba(255,255,255,0.2);
-  box-shadow: 0 0 0 7px #25303B;
-}
-section#timeline article div.inner span.date span {
-  display: block;
-  text-align: center;
-}
-section#timeline article div.inner span.date span.day {
-  font-size: 10px;
-}
-section#timeline article div.inner span.date span.month {
-  font-size: 18px;
-}
-section#timeline article div.inner span.date span.year {
-  font-size: 10px;
-}
-section#timeline article div.inner h2 {
-  padding: 15px;
-  margin: 0;
-  color: #fff;
-  font-size: 20px;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  border-radius: 6px 6px 0 0;
-  position: relative;
-}
-section#timeline article div.inner h2:after {
-  content: '';
-  position: absolute;
-  top: 20px;
-  right: -5px;
-  	width: 10px; 
-	  height: 10px;
-  -webkit-transform: rotate(-45deg);
-}
-section#timeline article div.inner p {
-  padding: 15px;
-  margin: 0;
-  font-size: 14px;
-  background: #fff;
-  color: #656565;
-  border-radius: 0 0 6px 6px;
-}
-section#timeline article:nth-child(2n+2) div.inner {
-  float: right;
-}
-section#timeline article:nth-child(2n+2) div.inner h2:after {
-  left: -5px;
-}
-section#timeline article:nth-child(1) div.inner h2 {
-  background: #e74c3c;
-}
-section#timeline article:nth-child(1) div.inner h2:after {
-  background: #e74c3c;
-}
-section#timeline article:nth-child(2) div.inner h2 {
-  background: #2ecc71;
-}
-section#timeline article:nth-child(2) div.inner h2:after {
-  background: #2ecc71;
-}
-section#timeline article:nth-child(3) div.inner h2 {
-  background: #e67e22;
-}
-section#timeline article:nth-child(3) div.inner h2:after {
-  background: #e67e22;
-}
-section#timeline article:nth-child(4) div.inner h2 {
-  background: #1abc9c;
-}
-section#timeline article:nth-child(4) div.inner h2:after {
-  background: #1abc9c;
-}
-section#timeline article:nth-child(5) div.inner h2 {
-  background: #9b59b6;
-}
-section#timeline article:nth-child(5) div.inner h2:after {
-  background: #9b59b6;
-} */
