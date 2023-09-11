@@ -1,14 +1,25 @@
 
 
-export function TimelineTag({ tag }) {
+export function TimelineTag({ tag }:{tag:string}) {
   return (
     <span className="bg-accent text-secondary text-sm fontB mr-2 px-2.5 py-0.5 rounded ml-3">
       {tag}
     </span>
   )
 }
+interface iTimeLineEvent {
+  event: {
+    month:string, 
+    year:string, 
+    title:string, 
+    tag:string, 
+    bp1:string, 
+    bp2:string, 
+    bp3:string
+  }
+}
 
-export const TimeLineEvent = ({ event }) => (
+export const TimeLineEvent = ({ event }:iTimeLineEvent) => (
   <li className="mb-10 ml-6">
     <h3 className="flex items-center mb-1 text-lg font-semibold font-main">
       <span className="fontB text-3xl text-primary capitalize">{event.title}</span>

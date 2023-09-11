@@ -1,11 +1,12 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { useState, useRef, useEffect } from 'react';
 
-export const AudioPlayer = ({ src, btnText }) => {
+export const AudioPlayer = ({ src, btnText }: {src:string, btnText:string}) => {
   const [isPlaying, setIsPlaying] = useState(false);
-  const audioRef = useRef(null);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const togglePlayPause = () => {
-    const audio = audioRef.current;
+    const audio = audioRef.current!;
     if (isPlaying) {
       audio.pause();
     } else {
@@ -19,7 +20,7 @@ export const AudioPlayer = ({ src, btnText }) => {
   };
 
   useEffect(() => {
-    const audio = audioRef.current;
+    const audio = audioRef.current!;
     audio.addEventListener('ended', handleAudioEnd);
 
     return () => {

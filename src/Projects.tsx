@@ -10,7 +10,7 @@ const projects = [
 export const Projects = () => {
 
   return (
-    <div id="work" className="p-12 z-10">
+    <div id="work" className="p-12 mb-20 z-10">
       <p className="magic-text fontC text-5xl py-5">Projects/work</p>
       <div className="projectGrid">
         

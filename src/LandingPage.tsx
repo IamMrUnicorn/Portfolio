@@ -7,9 +7,9 @@ const LandingPage: FC = () => {
   const [loopNum, setLoopNum] = useState(0);
   const [typingSpeed, setTypingSpeed] = useState(150);
 
-  const phrases = ["Full Stack Developer", "Frontend Engineer", "UI/UX Innovator", "Agile Practitioner", "AI enthusiast", "Collaborative Teammate", "D&D Aficionado", "Gamer"];
-
+  
   useEffect(() => {
+    const phrases = ["Full Stack Developer", "Frontend Engineer", "UI/UX Innovator", "Agile Practitioner", "AI enthusiast", "Collaborative Teammate", "D&D Aficionado", "Gamer"];
     const handleTyping = () => {
       const i = loopNum % phrases.length;
       const fullPhrase = phrases[i];
@@ -32,11 +32,11 @@ const LandingPage: FC = () => {
 
     const timer = setTimeout(handleTyping, typingSpeed);
     return () => clearTimeout(timer);
-  }, [typingText, isDeleting, typingSpeed, loopNum, phrases]);
+  }, [typingText, isDeleting, typingSpeed, loopNum]);
 
 
   return (
-    <div className="flex flex-col text-center relative top-28 pl-10 fontC h-screen items-center">
+    <div className="flex flex-col text-center relative top-28 pl-10 fontC h-screen mb-32 items-center">
       <div className="flex flex-row px-4 ">
         <div className="flex flex-col">
           <h1 className="py-8 text-6xl "> Hello <span className="">World</span> </h1>

@@ -5,7 +5,7 @@ import { TimeLine } from "./timeline"
 export const About = () => {
 
   return (
-    <div id='about' className="container mx-auto w-full h-full py-4">
+    <div id='about' className="container mx-auto w-full h-full mb-32 py-4">
       <p className="magic-text fontC text-5xl bg-black py-5">About me and my journey</p>
 
 
