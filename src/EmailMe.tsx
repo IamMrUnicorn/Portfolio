@@ -53,13 +53,13 @@ const handleSubmit = async (e: FormEvent) => {
     console.log(error)
   }
 };
- 
+
   return (
     <div className='bg-accent p-4 rounded-lg '>
       <form className='flex flex-col justify-center' onSubmit={handleSubmit}>
         <label className="flex flex-col text-accent-content fontB p-1">
           Enter your name
-          <input className="text-secondary-content rounded-lg p-2 bg-secondary" name='name' value={EmailData.name} onChange={handleChange} placeholder="doug" />
+          <input className="text-secondary-content rounded-lg p-2 bg-secondary" name='name' value={EmailData.name} onChange={handleChange} placeholder="Doug" />
         </label>
         <label className="flex flex-col text-accent-content fontB p-1" >
           Enter your email
@@ -67,7 +67,7 @@ const handleSubmit = async (e: FormEvent) => {
         </label>
         <label className="flex flex-col text-accent-content fontB p-1">
           Enter a cool message
-          <textarea cols={60} rows={10} className="text-secondary-content rounded-lg p-2 bg-secondary" name='message' value={EmailData.message} onChange={handleChange} placeholder="awesome projects, do you think i can borrow your BMO some time? :)" />
+          <textarea cols={20} rows={10} className="text-secondary-content rounded-lg p-2 bg-secondary" name='message' value={EmailData.message} onChange={handleChange} placeholder="Hello, are you open to talking about your projects over coffee sometime?" />
         </label>
         <button className="btn btn-primary fontC text-2xl w-min mx-auto " type='submit'>send</button>
       </form>

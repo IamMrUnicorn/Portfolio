@@ -50,7 +50,7 @@ const App: FC = () => {
   }
 
   return (
-    <div id="home" data-theme={lightSwitch ? 'light' : 'dark'} className='bg-base-100'>
+    <div id="home" data-theme={lightSwitch ? 'light' : 'dark'} className='overflow-x-hidden'>
       <Navbar lightState={lightSwitch} lightSwitch={changeTheme} />
       <LandingPage />
       <About />
